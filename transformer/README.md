@@ -1,6 +1,6 @@
 # Transformer from Scratch
 
-A Transformer classifier with **multi-head self-attention, absolute and relative positional encodings (APE/RPE), and a full training pipeline** — all implemented from first principles. Trained on a synthetic substring detection task.
+A Transformer classifier with **multi-head self-attention, absolute and relative positional encodings (APE/RPE), and a full training pipeline**, all implemented from first principles. Trained on a synthetic substring detection task.
 
 ## What's implemented from scratch
 
@@ -13,7 +13,7 @@ A Transformer classifier with **multi-head self-attention, absolute and relative
 
 ## Dataset
 
-Synthetic `SubstringDataset`: random strings over the alphabet `{c, p, e, n}`, labeled by whether they contain the substring `"cpen"`. Generated in-code — no download needed.
+Synthetic `SubstringDataset`: random strings over the alphabet `{c, p, e, n}`, labeled by whether they contain the substring `"cpen"`. Generated in-code, no download needed.
 
 ## How to run
 
