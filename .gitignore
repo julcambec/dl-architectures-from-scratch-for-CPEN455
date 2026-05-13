@@ -1,10 +1,29 @@
+# Python
 __pycache__/
+.pytest_cache/
 *.pyc
-.ipynb_checkpoints/
-data/
+*.py[cod]
+*$py.class
 *.egg-info/
 dist/
 build/
-.pytest_cache/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Data (MNIST auto-downloads)
+data/
+vae/data/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Virtual environments
 .venv/
+venv/
 env/
