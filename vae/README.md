@@ -1,6 +1,6 @@
 # Variational Autoencoder (VAE), From Scratch
 
-A convolutional VAE for MNIST with all probabilistic components implemented manually, without `torch.distributions`.
+A convolutional VAE for MNIST with all probabilistic components implemented manually, without `torch.distributions`. Implementation at [vae_from_scratch.py](vae_from_scratch.py)
 
 ## What's Implemented from Scratch
 
@@ -40,17 +40,6 @@ Input (1, 28, 28)
     │
     ▼
  Reconstruction (1, 28, 28)
-```
-
-## How to Run
-
-```bash
-# From repo root:
-cd vae
-
-# Run the walkthrough notebook (trains on MNIST, ~3-4 min on CPU)
-jupyter notebook walkthrough.ipynb
-
 ```
 
 MNIST auto-downloads via torchvision on first run (~12 MB).

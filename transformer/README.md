@@ -1,6 +1,6 @@
 # Transformer from Scratch
 
-An encoder-only Transformer implemented from first principles for binary sequence classification.
+An encoder-only Transformer implemented from first principles for binary sequence classification. Implementation at [transformer_from_scratch.py](transformer_from_scratch.py)
 
 ## Task
 
@@ -128,16 +128,6 @@ Both are implemented side by side.
 **Absolute Positional Encoding (APE)** assigns a unique learnable vector to each position index. Simple and effective, but the encoding has no built-in notion of distance: position 3 and position 4 are as "different" as position 3 and position 30 unless the model learns otherwise.
 
 **Relative Positional Encoding (RPE)** adds a learned scalar bias to each attention score based on the signed distance between the query and key positions. This makes the encoding translation-invariant: the model treats "tokens 2 positions apart" the same regardless of absolute position. RPE is implemented as a Toeplitz bias matrix inside the softmax, requiring only $2n - 1$ parameters per head.
-
-## How to Run
-
-```bash
-# From the repo root
-
-# Run the walkthrough notebook (VS Code or Jupyter)
-# Open transformer/walkthrough.ipynb and Run All
-
-```
 
 ## Result
 

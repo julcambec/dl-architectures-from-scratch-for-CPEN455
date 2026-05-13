@@ -1,6 +1,6 @@
 # CNN From Scratch
 
-Manual forward and backward passes for a convolutional neural network, no `loss.backward()`, no autograd for layer gradients.
+Manual forward and backward passes for a convolutional neural network, no `loss.backward()`, no autograd for layer gradients. Implementation at [cnn_from_scratch.py](cnn_from_scratch.py)
 
 ## Architecture
 
@@ -21,7 +21,7 @@ Input (B, 1, 28, 28)
   └─ Linear(1568, 10) → logits
 ```
 
-Trained on MNIST (5 000-image subset) with manual SGD. See [`walkthrough.ipynb`](walkthrough.ipynb) for the full training run and results.
+Trained on MNIST (5 000-image subset) with manual SGD.
 
 ## What's Implemented From Scratch
 
@@ -58,18 +58,6 @@ where $\mu_c$ and $\sigma_c^2$ are computed over the $(B, H, W)$ dimensions for 
 The Conv2d backward was initially implemented as a 7-deep nested Python loop (iterating over B, D, H\_out, W\_out, C, K, K) to make the element-wise gradient accumulation explicit. This version was verified against both PyTorch autograd and finite-difference gradient checking (see `gradient_check()` in the module).
 
 The loop-based backward took ~56 seconds per batch of 32 on 28×28 images, far too slow for training. The final implementation replaces those loops with the same im2col matrix used in the forward pass: the filter gradient becomes a batch matmul (`torch.bmm`) and the input gradient uses a col2im scatter with only H\_out × W\_out = 784 loop iterations (batch-vectorised). The result: ~0.04 seconds per batch: a ~1 400× speedup, with numerically identical gradients (differences at the 1e-14 level).
-
-## How to Run
-
-**Notebook (recommended):**
-
-```bash
-cd cnn/
-jupyter notebook walkthrough.ipynb
-# or open in VS Code and run all cells
-```
-
-MNIST is auto-downloaded via torchvision on first run (~50 MB, requires internet). Training completes in ~30–60 seconds on CPU.
 
 ## Files
 
